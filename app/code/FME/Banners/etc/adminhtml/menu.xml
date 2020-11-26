@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        
+        <update id="FME_Extensions::fmeextensions" title="FME Extensions" module="Magento_Backend" sortOrder="300" resource="FME_Extensions::fmeextensions"/>
+        <add id="FME_Banners::banners" title="Banners" module="FME_Banners" sortOrder="50" parent="FME_Extensions::fmeextensions" action="banners/index/index" resource="FME_Banners::banners"/>
+        
+    </menu>
+</config>

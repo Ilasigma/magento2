@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" label="Customer My Account (All Pages)" design_abstraction="custom">
+    <update handle="customer_account"/>
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument name="title" xsi:type="string" translate="true">My Todo List</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+                  <block class="Magento\Framework\View\Element\Template"
+                         name="Ila.Cms.block.list"
+                         template="Ila_Cms::todo.phtml" />
+        </referenceContainer>
+    </body>
+</page>

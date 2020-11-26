@@ -1,0 +1,118 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+$banners = $block->getFrontBanners();
+
+?>
+
+
+<article id="slider">
+    
+    
+            <?php $i=1;  foreach($banners as $index => $banner){  ?>
+                <input <?php if($i == 1): ?> checked="checked" <?php endif ?> type=radio name=slider id=<?php echo 'slide'. $i ?> />                    
+            <?php  $i++; }   ?>
+		
+		<!-- The Slider -->
+		
+		<div id=slides>
+		
+			<div id=overflow>
+			
+				<div class=inner>
+				
+                                        <?php  foreach($banners as $index => $banner){  ?>
+                                                    
+                                            	<article>
+                                                    <div class=info>
+                                                        <?php if($banner->getLink() != ''): ?><a target="<?php echo $banner->getTarget() ?>" href="<?php echo $banner->getLink() ?>"><?php endif; ?>
+                                                            <h3><?php echo $banner->getTitle() ?></h3>
+                                                        <?php if($banner->getLink() != ''): ?></a><?php endif; ?>
+                                                    </div>
+                                                    <img src=<?php echo $block->getMediaDirectoryUrl().$banner->getBannerimage() ?> />
+                                                </article>
+                                        
+                                        <?php   }   ?>					
+					
+				</div> <!-- .inner -->
+				
+			</div> <!-- #overflow -->
+		
+		</div> <!-- #slides -->
+		<div>
+	<p style="
+    cursor: auto;
+    /* text-decoration: underline; */
+    color: #333;
+   text-align: right;
+    font-size: 11px;
+    font-weight: 400;
+    margin-top: -20px;
+    z-index: -1;
+    position: absolute;
+
+   
+">by <a style="color: #333;" rel="no-follow" target="_Blank" href="https://www.fmeextensions.com/category-listing-banners-magento-2.html">Fmeextensions</a></p>  </div>
+	
+		<!-- Controls and Active Slide Display -->
+	
+		<div id=controls>
+                        <?php $i=1;  foreach($banners as $index => $banner){  ?>
+                            <label for=<?php echo 'slide'. $i ?>></label>
+                        <?php $i++;  }   ?>
+		</div> <!-- #controls -->
+		
+		<div id=active>
+                        <?php $i=1; foreach($banners as $index => $banner){  ?>
+                            <label for=<?php echo 'slide'. $i ?>></label>
+                        <?php $i++;  }   ?>
+		</div> <!-- #active -->
+		
+		
+</article>
+
+<script type="text/javascript">
+    
+var iPadLabels = function () {
+			function fix() {
+				var labels = document.getElementsByTagName('label'), 
+					target_id, 
+					el;
+				for (var i = 0; labels[i]; i++) {
+					if (labels[i].getAttribute('for')) {
+						labels[i].onclick = labelClick;
+					}
+				}
+			};
+			function labelClick() {
+				el = document.getElementById(this.getAttribute('for'));
+				if (['radio', 'checkbox'].indexOf(el.getAttribute('type')) != -1) {
+					el.setAttribute('selected', !el.getAttribute('selected'));
+				} else {
+					el.focus();
+				}
+			};
+				return {
+				fix: fix
+			}
+		}();
+		
+		window.onload = function () {
+					
+					iPadLabels.fix();
+				
+		}
+                
+</script>
+
+<style type="text/css">
+	
+input[type=radio] {
+	display: none;
+}
+</style>

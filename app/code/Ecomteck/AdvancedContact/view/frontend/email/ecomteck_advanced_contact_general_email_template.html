@@ -1,0 +1,19 @@
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "Contact Form"}} @-->
+<!--@vars {
+"template config_path=\"design\/email\/footer_template\"":"Email Footer Template",
+"template config_path=\"design\/email\/header_template\"":"Email Header Template",
+"var store_name":"Store Owner Name",
+"var message":"contact message",
+"store url=\"\"":"Store URL"
+} @-->
+{{template config_path="design/email/header_template"}}
+<p>
+<strong>Customer Message:</strong> {{var message}} <br/>
+</p>
+{{template config_path="design/email/footer_template"}}
