@@ -12,9 +12,7 @@ use Magento\Framework\App\Router\NoRouteHandlerInterface;
 class CustomNoRouteHandler implements NoRouteHandlerInterface
 {
      public function process(\Magento\Framework\App\RequestInterface $request){
-         $request->setRouteName('mage')->setControllerName('CustomNoRoute')->setActionName('page');
-
+         $request->setRouteName('noroute')->setControllerName('page')->setActionName('customnoroute');
          return true;
-
      }
 }

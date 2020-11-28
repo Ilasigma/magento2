@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+  <!--  <preference for="Sigma\CustomModule\NotMagento\PencilInterface"
+                type="Sigma\CustomModule\NotMagento\YellowPencil" />-->
+    <!--for = main for interface to be injected, type = concreate class to be used for injection-->
+
+     <preference for="Magento\Catalog\Api\ProductRepositoryInterface"
+                 type="Sigma\CustomModule\Model\CustomImplementation" />
+    <!--agreement for interface-->
+    <preference for="Sigma\CustomModule\Api\PencilInterface" type="Sigma\CustomModule\Model\Pencil" />
+    <preference for="Sigma\CustomModule\Api\Color" type="Sigma\CustomModule\Model\Yellow" />
+    <preference for="Sigma\CustomModule\Api\Size" type="Sigma\CustomModule\Model\Normal" />
+
+    <type name="Sigma\CustomModule\Controller\Page\Helloworld">
+        <plugin name="plugin_on_execute"
+                type="Sigma\CustomModule\Plugin\PluginSolution" sortOrder="10"/>
+        <plugin name="plugin_on_execute2"
+                type="Sigma\CustomModule\Plugin\PluginSolution2" sortOrder="20"/>
+        <plugin name="plugin_on_execute3"
+                type="Sigma\CustomModule\Plugin\PluginSolution3" sortOrder="30"/>
+    </type>
+
+
+
+    <type name="Sigma\CustomModule\Model\Pencil">
+         <arguments>
+           <argument name="color" xsi:type="object">Sigma\CustomModule\Model\Red</argument>
+           <argument name="size" xsi:type="object">Sigma\CustomModule\Model\Big</argument>
+         </arguments>
+    </type>
+</config>
