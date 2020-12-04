@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+		<add id="Sigma_Contact::contact" title="MyContact" translate="title" module="Sigma_Contact" sortOrder="20" dependsOnModule="Sigma_Cms" resource="Sigma_Contact::contact"/>
+		
+        <add id="Sigma_Contact::contactlist" title="MyContact" translate="title" module="Sigma_Contact" sortOrder="0" parent="Sigma_Contact::contact" action="mycontact/mycontact/index" resource="Sigma_Contact::contact"/>		
+        
+    </menu>
+</config>

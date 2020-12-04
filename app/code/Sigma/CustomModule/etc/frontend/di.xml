@@ -11,8 +11,8 @@
                 type="Sigma\CustomModule\NotMagento\YellowPencil" />-->
     <!--for = main for interface to be injected, type = concreate class to be used for injection-->
 
-     <preference for="Magento\Catalog\Api\ProductRepositoryInterface"
-                 type="Sigma\CustomModule\Model\CustomImplementation" />
+     <!-- <preference for="Magento\Catalog\Api\ProductRepositoryInterface"
+                 type="Sigma\CustomModule\Model\CustomImplementation" /> -->
     <!--agreement for interface-->
     <preference for="Sigma\CustomModule\Api\PencilInterface" type="Sigma\CustomModule\Model\Pencil" />
     <preference for="Sigma\CustomModule\Api\Color" type="Sigma\CustomModule\Model\Yellow" />

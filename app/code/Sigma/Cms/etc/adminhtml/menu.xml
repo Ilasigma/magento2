@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+		<add id="Sigma_Cms::catalog" title="Sigma Menu" translate="title" module="Sigma_Cms" sortOrder="20" dependsOnModule="Sigma_Cms" resource="Sigma_Cms::catalog"/>
+		
+        <add id="Sigma_Cms::cms_page" title="Sigma Pages" translate="title" module="Sigma_Cms" sortOrder="0" parent="Sigma_Cms::catalog" action="mylogin/index" resource="Sigma_Cms::page"/>
+		
+		
+        <add id="Sigma_Cms::cms_block" title="Sigma Blocks" translate="title" module="Sigma_Cms" sortOrder="30" parent="Sigma_Cms::catalog" action="cms/sigmablock" resource="Sigma_Cms::block"/>
+    </menu>
+</config>
